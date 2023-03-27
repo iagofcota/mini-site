@@ -1,0 +1,222 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/*o @font-face é utilizado quando se instala uma fonte local*/
+@font-face {
+    font-family: android;
+    src: url('../fontes/idroid.otf') format('opentype');
+    /* coloca o ../ para voltar a pasta*/
+    font-weight: normal;
+}
+
+
+:root{
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-android: 'android', 'cursive';
+    --fonte-destaque:'Bebas Neue', 'cursive';
+}
+
+/* para tirar a margem/espaço de todos os elementos usa-se o *{} pois ele engloba tudo VIDEO 36 MÓDULO 2*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: #c5ebd6;
+    font-family: var(--fonte-padrao);
+}
+
+a.externo::after{/*todo link ("a") que for externo vou colocar o simbolo após (after) ele*/
+    content: '\00A0\1F517';
+
+}
+
+main p {
+    margin: 15px 0px 15px 0px;
+}
+header{
+    /*backgroundimagem para criar gradiente modulo 2, video 39 7:50min */
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    min-height: 150px; /*ALTURA MÍNIMA*/
+    text-align: center;
+    padding-top: 40px;
+}
+header > h1{
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    margin-bottom: 20px;
+    font-size: 3em;
+    text-shadow: 2px 2px 2px black;
+    font-weight: normal;/*tirar o negrito da  fonte*/
+}
+
+header > p {
+    color: white;
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    max-width: 500px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+    text-shadow: 2px 2px 2px black;
+    margin-bottom: 20px;
+    
+}
+
+nav{
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 7px black ;
+}
+
+nav > a{
+    color: var(--cor1);
+    padding: 10px; /*ESPAÇAMENTO*/
+    text-decoration: none; /*TIRAR SUBLINHADO*/
+    font-weight: bold;
+    border-radius: 5px; /* PARA ARREDONDAR AS PONTAS DE CADA MENU*/
+    transition-duration: 0.5s;
+    
+}
+
+/*EFEITO PARA QUANDO PASSA O MOUSE*/
+nav > a:hover{
+    background-color: var(--cor3);
+    color: var(--cor5);
+
+}
+
+main{
+    min-width: 260px;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 30px; /*RODAPÉ*/
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px black;
+    border-bottom-left-radius: 10px; 
+    border-bottom-right-radius: 10px;/*ARREDONDAMENTO APENAS DA PARTE DE BAIXO*/
+}
+
+main > article > h1{
+    color: #063d1e;
+    font-family: var(--fonte-android);
+    font-weight: normal;
+}
+main > article > h2{
+    font-family: var(--fonte-android);
+    color: var(--cor4);
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor1), transparent); /*Grandiente na linha, está indo da COR01 para o transparente*/
+    text-indent: 8px; /*Espaçamento do texto na esquerda*/
+    font-weight: normal;
+}
+
+/*Não usuei o sinal de > porque posso ter o "p" dentro e fora de tags então quando não coloco eu digo que quero todos os "p" que estão no main*/
+main p {
+    margin: 15px 0px 15px 0px; 
+    text-align: justify; /*Alinhamento texto centro*/
+    text-indent: 30px; /*Espaço no inicio do paragráfo*/
+    line-height: 2em; /*Espaço entre as linhas*/
+}
+
+main strong{ /*tudo que for strong (negrito)*/
+    color: var(--cor4);
+    font-weight: bold; /*negrito*/
+}
+
+/*todos os links que estiver dentro do main, não usei o > porque se não limitaria e se tiver um "a" dentro de outra tag ai não pegaria a configuração, dessa forma sem o sinal de > vai pegar tdos*/
+main a { 
+    text-decoration: none; /*tirei a decoração do texto*/
+    font-weight: bold; /*negrito*/
+    color: var(--cor5);
+    background-color: var(--cor1);
+    padding: 2px 6px;
+    
+}
+
+main a:hover{
+    text-decoration: underline;
+    color: var(--cor4);
+}
+
+main img{
+    width: 100%;
+}
+
+main img.pequena{
+    max-width: 350px;
+    display: block;
+    margin: auto;
+}
+
+/*CONFIGURAÇÕES PARA EDITAR O VÍDEO, TANTO A DIV QUANDO O IFRAME*/    
+div.video{
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px ;/*essa é a margem da div*/
+    padding: 20px;
+    padding-bottom: 57%; /*retira a barra preta do video, que fica na lateral*/
+    position: relative;
+}
+div.video > iframe{
+    position: absolute;
+    top:5% ;
+    left:5% ;
+    width:90% ;
+    height:90% ;
+}
+
+aside{
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.418); /*sombra na caixa "Quer aprender mais*/
+}
+
+aside > h3{
+    background-image:linear-gradient(to bottom, var(--cor5), var(--cor3), transparent) ;
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px; /*o -10 foi para colocar a caixa na borda de cima*/
+    border-radius: 10px 10px 0px 0px; /*arredondei só em cima*/
+
+
+}
+
+aside > ul{
+    list-style-type: '\2714\00A0\00A0'; /*peguei modelo no emojipedia, coloca a barra invertida "\" com o código do site
+    para dar o espaço coloca barra invertida e o código 00A0 acrescenta o espaço*/
+
+    list-style-position: inside;
+    columns: 2;
+
+}
+
+footer{
+    background-color: var(--cor5);
+    color: white;
+    text-align: center; /*Centralizar o texto*/
+    font-size: 0.8em; /*diminuir tamanho do texto*/ 
+    padding: 5px;   
+}
+
+footer a{ /*Links dentro do footer*/
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer a:hover{
+    text-decoration: underline;
+    color: var(--cor1);
+}
+
